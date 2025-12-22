@@ -1,15 +1,19 @@
 import React from 'react'
 import { Outlet } from 'react-router'
+import Navbar from '../../Components/Sheard/Navbar/Navbar'
+import Footer from '../../Components/Sheard/Footer/Footer'
 
 const RootLayout = () => {
   return (
     <div>
-      <nav>This is Nav item</nav>
+      <nav>
+        <Navbar/>
+      </nav>
       <main>
         <Outlet/>
       </main>
       <footer>
-        <h1 className='text-2xl'>This is Footer</h1>
+        <Footer/>
       </footer>
     </div>
   )
