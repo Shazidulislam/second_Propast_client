@@ -8,6 +8,10 @@ import Register from "../pages/Authpage/Register";
 import Coverage from "../pages/Coverage/Coverage";
 import SendaPercel from "../pages/SendAPercel/SendAPercel";
 import PricingCalculation from "../pages/PricingCalulation/PricingCalculation";
+import MyParcel from "../pages/DashBoard/MyParcel";
+// import Payment from "../pages/DashBoard/Payment/Payment";
+import DashBoard from "../Layout/DashBoard";
+import PriviteRoutes from "../routes/PriviteRoutes";
 
 const router = createBrowserRouter([
   {
@@ -26,26 +30,26 @@ const router = createBrowserRouter([
       {
         path: "SendaPercel",
         element: (
-          // <PriviteRoutes>
+          <PriviteRoutes>
             <SendaPercel></SendaPercel>
-          // </PriviteRoutes>
+          </PriviteRoutes>
         ),
         loader: () => fetch("./servicesCenter.json"),
       },
       {
         path: "beRider",
         element: (
-          // <PriviteRoutes>
+          <PriviteRoutes>
             <BeRider></BeRider>
-          // </PriviteRoutes>
+          </PriviteRoutes>
         ),
       },
       {
         path: "pricing",
         element: (
-          // <PriviteRoutes>
+          <PriviteRoutes>
             <PricingCalculation></PricingCalculation>
-          // </PriviteRoutes>
+          </PriviteRoutes>
         ),
       },
     ],
@@ -64,24 +68,20 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/dashboard",
-  //   element: (
-  //     <PriviteRoutes>
-  //       <DashBoard></DashBoard>
-  //     </PriviteRoutes>
-  //   ),
-  //   children:[
-  //       {
-  //           path:"/dashboard/myParcel",
-  //           Component:MyParcel
-  //       },
-  //       {
-  //         path:"payment/:parcelID",
-  //         Component:Payment
-  //       }
-  //   ]
-  // },
+  {
+    path: "/dashboard",
+    element: (
+      <PriviteRoutes>
+        <DashBoard></DashBoard>
+      </PriviteRoutes>
+    ),
+    children: [
+      {
+        path: "/dashboard/myParcel",
+        Component: MyParcel,
+      },
+    ],
+  },
 ]);
 
 export default router;
