@@ -43,15 +43,14 @@ export default function MapSection({ servicesCenter }) {
   return (
     <div>
       {/* search bar */}
-      <form onSubmit={handleSearch}  className="flex mb-10 justify-start items-center">
+      <form onSubmit={handleSearch}  className="flex mb-10 mt-4 w-full sm:w-[600px]  justify-start items-center">
         <input
           type="text"
-          placeholder="Search a district..."
-          className="bg-white shadow my-3 py-2 px-6 outline-none  rounded-bl-full rounded-tl-full w-xl"
           value={serachDistricts}
+          className="py-2 px-6 shadow outline-none border border-gray-200 w-full rounded-l-full"
           onChange={(e) => setSerachDistricts(e.target.value)}
         />
-        <button type="submit" className="px-6 rounded-br-full shadow rounded-tr-full py-2 bg-[#CAEB66] font-medium">
+        <button type="submit" className="px-6 rounded-br-full border border-gray-200 shadow rounded-tr-full py-2 bg-[#CAEB66] font-medium">
           Search
         </button>
       </form>

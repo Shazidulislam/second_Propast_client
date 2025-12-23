@@ -7,6 +7,7 @@ import Login from "../Pages/Authpage/Login";
 import Register from "../pages/Authpage/Register";
 import Coverage from "../pages/Coverage/Coverage";
 import SendaPercel from "../pages/SendAPercel/SendAPercel";
+import PricingCalculation from "../pages/PricingCalulation/PricingCalculation";
 
 const router = createBrowserRouter([
   {
@@ -39,14 +40,14 @@ const router = createBrowserRouter([
           // </PriviteRoutes>
         ),
       },
-      // {
-      //   path: "pricing",
-      //   element: (
-      //     <PriviteRoutes>
-      //       <PricingCalculation></PricingCalculation>
-      //     </PriviteRoutes>
-      //   ),
-      // },
+      {
+        path: "pricing",
+        element: (
+          // <PriviteRoutes>
+            <PricingCalculation></PricingCalculation>
+          // </PriviteRoutes>
+        ),
+      },
     ],
   },
   {
